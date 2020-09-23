@@ -1,1 +1,4 @@
-/out
+# Default ignored files
+.DS_Store
+/out/
+/lib/
