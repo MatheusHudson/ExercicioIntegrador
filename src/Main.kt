@@ -1,7 +1,3 @@
-package br.exercicioIntegrador.com
-
-import Livro
-
 fun main() {
 
 
