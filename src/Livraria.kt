@@ -7,6 +7,13 @@ class Livraria(var listaLivros: MutableList<Livro>, var listaColecoes: MutableLi
         println("Livro cadastrado com sucesso!!!")
     }
 
+    init {
+        cadastrarLivro(Livro("Cronicas de fogo", "George", 1874, 15, 56.45))
+        cadastrarLivro(Livro("Cronicas de gelo", "George", 1963, 12, 65.45))
+        cadastrarLivro(Livro("Instrumentos Mortais", "Cassandra", 187, 92, 30.67))
+        cadastrarColecao(Colecao("Saga Maluca", "Lucas Macedo", 2020, 1, 89.00, listaLivros))
+    }
+
     fun cadastrarColecao(colecao: Colecao) {
         colecao.codigo = codigoBarra++
         listaColecoes.add(colecao)
