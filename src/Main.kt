@@ -1,7 +1,6 @@
 fun main() {
 
 
-
     val livro1 = Livro("O Senhor dos Anéis: A Sociedade do Anel ",
             " Peter Jackson",2001,65,89.90)
 
@@ -32,8 +31,22 @@ fun main() {
     val livro10 = Livro("  Maze Runner Prova de Fogo ",
             "  James Dashner",2010,0,92.90)
 
+    val colecao1 = Colecao("Senhor dos Aneis", "Editora Suster", 2005, 5,
+    250.00, mutableListOf(livro1,livro2,livro3))
 
+    val listaColecao = mutableListOf<Colecao>()
 
+    val livraria = Livraria(mutableListOf(livro1,livro2,livro3,livro4,livro5,
+            livro6,livro7,livro8,livro9),listaColecao)
 
+    livraria.cadastrarLivro(livro1)
+    livraria.cadastrarLivro(livro2)
+    livraria.cadastrarLivro(livro3)
+    livraria.cadastrarLivro(livro4)
+    livraria.cadastrarLivro(livro5)
+    livraria.cadastrarColecao(colecao1)
+    livraria.consultar(1)
+    livraria.efetuarVenda(3)
+    livraria.efetuarVenda(3)
 
 }

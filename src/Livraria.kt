@@ -4,11 +4,13 @@ class Livraria(var listaLivros: MutableList<Livro>, var listaColecoes: MutableLi
     fun cadastrarLivro(livro: Livro) {
         livro.codigo = codigoBarra++
         listaLivros.add(livro)
+        println("Livro cadastrado com sucesso!!!")
     }
 
     fun cadastrarColecao(colecao: Colecao) {
         colecao.codigo = codigoBarra++
         listaColecoes.add(colecao)
+        println("Coleção cadastrada com sucesso!!!")
     }
 
     fun busca(codigo: Int): List<Livro> {
