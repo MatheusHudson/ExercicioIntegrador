@@ -11,7 +11,7 @@ class Livraria(var listaLivros: MutableList<Livro>, var listaColecoes: MutableLi
         listaColecoes.add(colecao)
     }
 
-    fun busca(codigo: Int): List<Any> {
+    fun busca(codigo: Int): List<Livro> {
         val buscaLivro = listaLivros.filter { it.codigo == codigo }
         val buscaColecao = listaColecoes.filter { it.codigo == codigo }
         when {
@@ -44,12 +44,10 @@ class Livraria(var listaLivros: MutableList<Livro>, var listaColecoes: MutableLi
     }
 
     fun efetuarVenda(codigo: Int) {
-        var auxLivro = busca(codigo)[0] as Livro
-        var auxColecao = busca(codigo)[0] as Colecao
-        if (busca(codigo).isEmpty() || auxLivro.qdtEstoque == 0 || auxColecao.qdtEstoque == 0) {
+        if (busca(codigo).isEmpty() || busca(codigo)[0].qdtEstoque == 0) {
             println("Estoque Esgotado")
         } else {
-            (busca(codigo)[0] as Livro).qdtEstoque--
+            busca(codigo)[0].qdtEstoque--
         }
     }
 }
